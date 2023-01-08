@@ -5,10 +5,10 @@ def del_dockstrings(tree: ast.Module) -> ast.Module:
     """Удаляет из дерева комментарии и docstring, возвращая очищенное синтаксическое дерево
 
     Args:
-        tree (ast.Module): исходное синтаксическое дерево
+        tree (ast.Module): Исходное синтаксическое дерево
 
     Returns:
-        ast.Module: очищенное синтаксическое дерево
+        ast.Module: Очищенное синтаксическое дерево
     """
     for node in ast.walk(tree):
         # https://docs.python.org/3/library/ast.html#ast.get_docstring
@@ -106,13 +106,13 @@ def compare_files(file_pair: list) -> float:
 
 
 def read_input(input_path: str) -> list:
-    """Считывает фходной файл в список
+    """Считывает входной файл в список
 
     Args:
         input_path (str): Путь до входного файла
 
     Returns:
-        list: список с парами
+        list: Список с парами
     """
     with open(input_path, 'rt') as input_file:
         return [line.replace('\n', '').split(' ') for line in input_file.readlines()]
